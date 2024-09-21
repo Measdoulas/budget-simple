@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetSimple</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>BudgetSimple</h1>
+            <button id="settingsBtn">⚙️</button>
+        </header>
+        <main>
+            <section id="overview">
+                <h2>Aperçu du mois</h2>
+                <p>Budget mensuel : <span id="monthlyBudget">0</span> FCFA</p>
+                <p>Dépenses : <span id="totalExpenses">0</span> FCFA</p>
+                <p>Reste du budget : <span id="remainingBudget">0</span> FCFA</p>
+            </section>
+            <section id="charts">
+                <div id="expensesChart"></div>
+                <div id="savingsChart"></div>
+            </section>
+            <section id="transactionForm">
+                <h2>Ajouter une transaction</h2>
+                <form id="addTransactionForm">
+                    <input type="text" id="description" placeholder="Description" required>
+                    <input type="number" id="amount" placeholder="Montant (FCFA)" required>
+                    <select id="category" required>
+                        <option value="">Choisir une catégorie</option>
+                    </select>
+                    <button type="submit">Ajouter</button>
+                </form>
+            </section>
+            <section id="transactionList">
+                <h2>Transactions récentes</h2>
+                <ul id="transactions"></ul>
+            </section>
+            <section id="reports">
+                <h2>Rapports</h2>
+                <button id="monthlyReportBtn">Rapport mensuel</button>
+                <button id="yearlyReportBtn">Rapport annuel</button>
+                <button id="exportDataBtn">Exporter les données</button>
+            </section>
+        </main>
+        <nav>
+            <button id="overviewBtn">📊</button>
+            <button id="addBtn">➕</button>
+            <button id="listBtn">📝</button>
+            <button id="chartsBtn">📈</button>
+        </nav>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
